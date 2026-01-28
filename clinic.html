@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="google-site-verification" content="0DtwDEAhTy7qYl-5pZ9C4NPx45b7aBWCQJSZZ6938J4" />
 
-  <title>Clinics – Scheduling, Patient Communication & Workflow Support</title>
-  <meta name="description" content="An independent overview of tools that support scheduling, reminders, and patient communication for appointment-based clinics." />
+  <title>Clinics – Scheduling, Communication & Workflow Support</title>
+  <meta name="description" content="Independent overview of tools that support clinic scheduling, staff coordination, and patient communication workflows." />
 
   <style>
     :root{
@@ -18,13 +18,13 @@
       --muted:#b8c3e6;
       --accent:#7c5cff;
       --accent2:#22d3ee;
-      --shadow: 0 14px 38px rgba(0,0,0,.40);
+      --shadow:0 14px 38px rgba(0,0,0,.40);
       --r:18px;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
       color:var(--text);
       background:
         radial-gradient(900px 500px at 15% -10%, rgba(124,92,255,.26), transparent 60%),
@@ -36,10 +36,11 @@
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1100px;margin:0 auto;padding:18px}
 
+    /* Top navigation */
     .topbar{
       position:sticky;top:0;z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(11,16,32,.70);
+      backdrop-filter:blur(10px);
+      background:rgba(11,16,32,.70);
       border-bottom:1px solid var(--line);
     }
     .nav{
@@ -49,33 +50,34 @@
     .brand{display:flex;gap:10px;align-items:center;font-weight:900}
     .logo{
       width:34px;height:34px;border-radius:12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 12px 30px rgba(124,92,255,.22);
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:0 12px 30px rgba(124,92,255,.22);
     }
-
     .links{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
     .link{
       padding:8px 10px;border-radius:999px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
+      background:rgba(255,255,255,.04);
       color:var(--muted);
       font-weight:650;font-size:14px;
       transition:.15s ease;
       white-space:nowrap;
     }
     .link:hover{background:rgba(255,255,255,.07);color:var(--text)}
-    .link.active{background:rgba(124,92,255,.14);border-color:rgba(124,92,255,.45);color:var(--text)}
-
+    .link.active{
+      background:rgba(124,92,255,.14);
+      border-color:rgba(124,92,255,.45);
+      color:var(--text);
+    }
     .cta{
       padding:10px 14px;border-radius:999px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color:#071022;font-weight:900;border:0;
-      box-shadow: 0 14px 34px rgba(124,92,255,.22);
-      display:inline-flex;align-items:center;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#071022;font-weight:900;
+      box-shadow:0 14px 34px rgba(124,92,255,.22);
     }
 
     details.menu{display:none}
-    @media (max-width: 860px){
+    @media (max-width:860px){
       .links{display:none}
       details.menu{display:block}
       details.menu summary{
@@ -83,7 +85,7 @@
         padding:8px 10px;border-radius:12px;
         border:1px solid var(--line);
         background:rgba(255,255,255,.04);
-        color:var(--text);font-weight:850;
+        font-weight:850;
       }
       details.menu .panel{
         margin-top:10px;
@@ -96,12 +98,13 @@
       details.menu .panel a{text-align:center}
     }
 
+    /* Page content */
     .hero{
       margin-top:16px;
       border:1px solid var(--line);
       border-radius:var(--r);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
+      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
+      box-shadow:var(--shadow);
       padding:22px;
     }
     h1{margin:0 0 10px;font-size:36px;line-height:1.1}
@@ -113,12 +116,12 @@
       grid-template-columns:repeat(3,1fr);
       gap:12px;
     }
-    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
 
     .mini{
       border:1px solid var(--line);
       border-radius:var(--r);
-      background: var(--panel2);
+      background:var(--panel2);
       padding:14px;
     }
     .mini strong{display:block;margin-bottom:6px}
@@ -128,24 +131,16 @@
       margin-top:14px;
       border:1px solid var(--line);
       border-radius:var(--r);
-      background: var(--panel2);
+      background:var(--panel2);
       padding:16px;
     }
     .panel h2{margin:0 0 8px;font-size:16px}
     .panel p{margin:0;color:var(--muted);font-size:14px}
 
-    .nextbar{
-      margin-top:14px;
-      display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;
-      padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);
-      background: rgba(255,255,255,.03);
-    }
-    .nextbar .muted{color:var(--muted);font-size:14px}
-
     footer{
       margin-top:24px;
       border-top:1px solid var(--line);
-      background: rgba(0,0,0,.18);
+      background:rgba(0,0,0,.18);
     }
     .foot{
       max-width:1100px;margin:0 auto;padding:16px 18px;
@@ -196,24 +191,24 @@
   <section class="hero">
     <h1>Tools to support scheduling, patient communication, and clinic workflow.</h1>
     <p class="sub">
-      Designed for appointment-based practices that need reliable reminders,
-      organized patient inquiries, and clear communication across staff.
+      Designed for appointment-based practices that need reliable coordination,
+      structured communication, and clear visibility across staff.
     </p>
 
     <div class="grid">
       <div class="mini">
-        <strong>Appointment reminders</strong>
-        <span>Send confirmations and reminders to help reduce missed appointments.</span>
+        <strong>Care coordination</strong>
+        <span>Keep outreach and follow-up steps consistent across your team.</span>
       </div>
 
       <div class="mini">
-        <strong>Patient inquiries</strong>
-        <span>Manage and respond to new patient messages in a timely, consistent manner.</span>
+        <strong>Scheduling workflow</strong>
+        <span>Reduce back-and-forth with confirmations and clear next steps.</span>
       </div>
 
       <div class="mini">
-        <strong>Central communication</strong>
-        <span>Keep patient conversations organized in one shared inbox.</span>
+        <strong>Front-desk efficiency</strong>
+        <span>Standardize intake and communication so requests don’t get missed.</span>
       </div>
     </div>
 
@@ -221,20 +216,12 @@
       <h2>Recommended next step</h2>
       <p>
         Review a high-level overview of the platform, then explore the demo
-        to see whether it fits your clinic’s workflow.
+        to see whether it aligns with your clinic’s workflow.
       </p>
       <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
         <a class="cta" href="review.html">Go to Review →</a>
         <a class="link" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">Try the demo</a>
       </div>
-    </div>
-
-    <div class="nextbar">
-      <div>
-        <div style="font-weight:900;">Next page</div>
-        <div class="muted">Review (overview & decision support)</div>
-      </div>
-      <a class="cta" href="review.html">Review →</a>
     </div>
   </section>
 </div>
