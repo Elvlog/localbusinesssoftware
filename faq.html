@@ -2,50 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FAQ – Quick Answers Before You Try the Demo</title>
-  <meta name="description" content="Frequently asked questions about this independent informational site and the demo link." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-site-verification" content="0DtwDEAhTy7qYl-5pZ9C4NPx45b7aBWCQJSZZ6938J4" />
+
+  <title>FAQ – Common Questions</title>
+  <meta name="description" content="Simple answers about this independent site, affiliate links, and what the software is meant to do." />
 
   <style>
-    :root{--bg:#0b1020;--text:#eaf0ff;--muted:#b8c3e6;--line:rgba(255,255,255,.12);--accent:#7c5cff;--accent2:#22d3ee;--good:#32d583;--shadow:0 18px 50px rgba(0,0,0,.45);--radius:18px}
+    :root{--bg:#0b1020;--panel2:rgba(255,255,255,.04);--line:rgba(255,255,255,.12);--text:#eaf0ff;--muted:#b8c3e6;--accent:#7c5cff;--accent2:#22d3ee;--shadow:0 14px 38px rgba(0,0,0,.40);--r:18px;}
     *{box-sizing:border-box}
-    body{margin:0;color:var(--text);line-height:1.55;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
-      background: radial-gradient(1000px 600px at 20% -10%, rgba(124,92,255,.35), transparent 60%),
-                  radial-gradient(900px 500px at 90% 0%, rgba(34,211,238,.25), transparent 55%),
-                  radial-gradient(900px 600px at 50% 110%, rgba(50,213,131,.18), transparent 60%),
-                  var(--bg);}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;color:var(--text);
+      background:radial-gradient(900px 500px at 15% -10%, rgba(124,92,255,.26), transparent 60%),
+               radial-gradient(800px 500px at 95% 0%, rgba(34,211,238,.20), transparent 55%),
+               radial-gradient(800px 550px at 50% 110%, rgba(124,92,255,.16), transparent 60%), var(--bg);
+      line-height:1.55}
     a{color:inherit;text-decoration:none}
-    .topbar{position:sticky;top:0;z-index:50;backdrop-filter: blur(10px);background:rgba(11,16,32,.72);border-bottom:1px solid var(--line)}
-    .nav{max-width:1100px;margin:0 auto;padding:14px 22px;display:flex;gap:10px;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:10px;align-items:center;font-weight:800}
-    .logo{width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 10px 30px rgba(124,92,255,.25)}
-    .navlinks{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .pill{padding:9px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:rgba(255,255,255,.04);transition:.2s;font-weight:600;font-size:14px}
-    .pill:hover{transform:translateY(-1px);background:rgba(255,255,255,.07);color:var(--text)}
-    .pill.active{border-color:rgba(124,92,255,.55);background:rgba(124,92,255,.16);color:var(--text)}
-    .cta{padding:10px 14px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#071022;font-weight:900;box-shadow:0 16px 40px rgba(124,92,255,.25);display:inline-flex;gap:8px;align-items:center}
-    .cta:hover{filter:brightness(1.05);transform:translateY(-1px)}
-    .wrap{max-width:1100px;margin:0 auto;padding:22px}
-    .panel{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));box-shadow:var(--shadow);padding:22px;position:relative;overflow:hidden}
-    .panel::after{content:"";position:absolute;inset:-2px;background:radial-gradient(650px 240px at 30% 0%, rgba(124,92,255,.22), transparent 55%),radial-gradient(520px 220px at 90% 10%, rgba(34,211,238,.18), transparent 55%);pointer-events:none}
-    .panel>*{position:relative}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px}
+    .topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(11,16,32,.70);border-bottom:1px solid var(--line)}
+    .nav{max-width:1100px;margin:0 auto;padding:12px 18px;display:flex;gap:12px;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:900}
+    .logo{width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 12px 30px rgba(124,92,255,.22)}
+    .links{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .link{padding:8px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--muted);font-weight:650;font-size:14px;transition:.15s ease;white-space:nowrap}
+    .link:hover{background:rgba(255,255,255,.07);color:var(--text);transform:translateY(-1px)}
+    .link.active{background:rgba(124,92,255,.14);border-color:rgba(124,92,255,.45);color:var(--text)}
+    .cta{padding:10px 14px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#071022;font-weight:950;box-shadow:0 14px 34px rgba(124,92,255,.22);display:inline-flex;align-items:center;white-space:nowrap}
+    details.menu{display:none}
+    @media (max-width:860px){
+      .links{display:none} details.menu{display:block}
+      details.menu summary{list-style:none;cursor:pointer;padding:8px 10px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);font-weight:850}
+      details.menu .panel{margin-top:10px;border:1px solid var(--line);background:rgba(11,16,32,.92);border-radius:14px;padding:10px;display:grid;gap:8px}
+      details.menu .panel a{display:block;text-align:center}
+      details.menu .panel .cta{justify-content:center}
+    }
+    .hero{margin-top:16px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));box-shadow:var(--shadow);padding:22px}
     h1{margin:0 0 10px;font-size:38px;line-height:1.1;letter-spacing:-.6px}
-    .sub{margin:0 0 14px;color:var(--muted)}
-    .badge{display:inline-flex;gap:8px;align-items:center;padding:8px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--muted);font-weight:700;font-size:13px}
-    .dot{width:9px;height:9px;border-radius:99px;background:var(--good);box-shadow:0 0 0 5px rgba(50,213,131,.12)}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-    @media(max-width:900px){.grid{grid-template-columns:1fr}}
-    .card{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.03);padding:18px;transition:.2s}
-    .card:hover{transform:translateY(-2px);background:rgba(255,255,255,.05)}
-    .q{font-weight:900;margin:0 0 8px}
-    .a{margin:0;color:var(--muted)}
-    .pill2{display:inline-flex;gap:8px;align-items:center;padding:10px 12px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04);font-weight:800}
-    .pill2:hover{background:rgba(255,255,255,.07);transform:translateY(-1px)}
-    .note{margin-top:12px;font-size:13px;color:var(--muted);border:1px dashed rgba(255,255,255,.18);padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.03)}
-    footer{margin-top:34px;border-top:1px solid var(--line);background:rgba(0,0,0,.15)}
-    .foot{max-width:1100px;margin:0 auto;padding:22px;display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;color:var(--muted);font-size:14px}
-    .foot a{color:var(--text);opacity:.9}
-    .foot a:hover{opacity:1}
+    @media (max-width:520px){h1{font-size:30px}}
+    .sub{margin:0;color:var(--muted);max-width:65ch}
+    .qa{margin-top:14px;display:grid;gap:12px}
+    .box{border:1px solid var(--line);border-radius:var(--r);background:var(--panel2);padding:16px}
+    .box h2{margin:0 0 8px;font-size:16px}
+    .box p{margin:0;color:var(--muted);font-size:14px}
+    .nextbar{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:rgba(255,255,255,.03)}
+    .nextbar .muted{color:var(--muted);font-size:14px}
+    footer{margin-top:24px;border-top:1px solid var(--line);background:rgba(0,0,0,.18)}
+    .foot{max-width:1100px;margin:0 auto;padding:16px 18px;display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;color:var(--muted);font-size:14px}
+    .foot a{color:var(--text);opacity:.9} .foot a:hover{opacity:1}
   </style>
 </head>
 <body>
@@ -53,30 +55,86 @@
 <div class="topbar">
   <div class="nav">
     <div class="brand"><div class="logo"></div><div>LocalGrowth Stack</div></div>
-    <div class="navlinks">
-      <a class="pill" href="index.html">Home</a>
-      <a class="pill" href="clinic.html">Clinics</a>
-      <a class="pill" href="review.html">Review</a>
-      <a class="pill" href="industries.html">Industries</a>
-      <a class="pill active" href="faq.html">FAQ</a>
-      <a class="pill" href="privacy.html">Privacy</a>
-      <a class="pill" href="affiliate-disclosure.html">Disclosure</a>
+
+    <div class="links">
+      <a class="link" href="index.html">Home</a>
+      <a class="link" href="clinic.html">Clinics</a>
+      <a class="link" href="review.html">Review</a>
+      <a class="link" href="industries.html">Industries</a>
+      <a class="link active" href="faq.html">FAQ</a>
+      <a class="link" href="privacy.html">Privacy</a>
+      <a class="link" href="affiliate-disclosure.html">Disclosure</a>
       <a class="cta" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">Try Free Demo →</a>
     </div>
+
+    <details class="menu">
+      <summary>Menu</summary>
+      <div class="panel">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="clinic.html">Clinics</a>
+        <a class="link" href="review.html">Review</a>
+        <a class="link" href="industries.html">Industries</a>
+        <a class="link active" href="faq.html">FAQ</a>
+        <a class="link" href="privacy.html">Privacy</a>
+        <a class="link" href="affiliate-disclosure.html">Disclosure</a>
+        <a class="cta" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">Try Free Demo →</a>
+      </div>
+    </details>
   </div>
 </div>
 
 <div class="wrap">
-  <section class="panel">
-    <div class="badge"><span class="dot"></span> Quick answers (trust + clarity)</div>
-    <h1>FAQ: What people usually ask before clicking</h1>
-    <p class="sub">Short, direct answers to avoid confusion and build trust.</p>
+  <section class="hero">
+    <h1>FAQ</h1>
+    <p class="sub">Quick answers. No fluff.</p>
 
-    <div style="display:flex;gap:10px;flex-wrap:wrap;">
-      <a class="cta" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">Try Free Demo →</a>
-      <a class="pill2" href="industries.html">Previous: Industries ←</a>
-      <a class="pill2" href="privacy.html">Next: Privacy →</a>
+    <div class="qa">
+      <div class="box">
+        <h2>Is this the official product website?</h2>
+        <p>No. This is an independent informational site sharing opinions and general guidance.</p>
+      </div>
+      <div class="box">
+        <h2>Do you guarantee results or income?</h2>
+        <p>No. Results vary by business. This site does not guarantee outcomes.</p>
+      </div>
+      <div class="box">
+        <h2>Do you provide customer support?</h2>
+        <p>No. Support is provided by the software company itself.</p>
+      </div>
+      <div class="box">
+        <h2>How do you make money?</h2>
+        <p>This site uses affiliate links. If you sign up through a link, I may earn a commission at no extra cost to you.</p>
+      </div>
     </div>
 
-    <div class="note">
-      <strong>Disclosure:</strong> This site may earn a commission from affiliate links. This is not the official
+    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+      <a class="cta" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">Try Free Demo →</a>
+      <a class="link" href="review.html">Back to Review</a>
+    </div>
+
+    <div class="nextbar">
+      <div>
+        <div style="font-weight:900;">Next page</div>
+        <div class="muted">Privacy Policy (for transparency)</div>
+      </div>
+      <a class="cta" href="privacy.html">Privacy →</a>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="foot">
+    <div>
+      <div style="font-weight:900;color:var(--text);margin-bottom:6px;">LocalGrowth Stack</div>
+      <div>Independent informational site. Affiliate links may be used.</div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
