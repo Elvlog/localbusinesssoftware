@@ -74,7 +74,9 @@
       background:linear-gradient(135deg,var(--accent),var(--accent2));
       color:#071022;font-weight:900;
       box-shadow:0 14px 34px rgba(124,92,255,.22);
+      display:inline-flex;align-items:center;white-space:nowrap;
     }
+    .cta:hover{filter:brightness(1.05);transform:translateY(-1px)}
 
     details.menu{display:none}
     @media (max-width:860px){
@@ -96,6 +98,7 @@
         display:grid;gap:8px;
       }
       details.menu .panel a{text-align:center}
+      details.menu .panel .cta{justify-content:center}
     }
 
     /* Page content */
@@ -219,7 +222,8 @@
         to see whether it aligns with your clinic’s workflow.
       </p>
       <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
-        <a class="link" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">Try the demo</a>
+        <!-- PURPLE button fix -->
+        <a class="cta" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">Try the demo →</a>
       </div>
     </div>
   </section>
