@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="0DtwDEAhTy7qYl-5pZ9C4NPx45b7aBWCQJSZZ6938J4" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Local Business Software – Simple Automation for Growth</title>
-  <meta name="description" content="Independent guide to an all-in-one platform that helps local businesses manage leads, appointments, and follow-ups." />
+
+  <meta name="google-site-verification" content="0DtwDEAhTy7qYl-5pZ9C4NPx45b7aBWCQJSZZ6938J4" />
+
+  <title>LocalGrowth Stack – Simple Automation for Local Businesses</title>
+  <meta name="description" content="Independent guide to an all-in-one platform for leads, follow-ups, and appointment reminders." />
 
   <style>
     :root{
@@ -17,7 +19,7 @@
       --muted:#b8c3e6;
       --accent:#7c5cff;
       --accent2:#22d3ee;
-      --shadow: 0 16px 40px rgba(0,0,0,.40);
+      --shadow: 0 14px 38px rgba(0,0,0,.40);
       --r:18px;
     }
     *{box-sizing:border-box}
@@ -26,31 +28,31 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(900px 500px at 15% -10%, rgba(124,92,255,.28), transparent 60%),
-        radial-gradient(800px 500px at 95% 0%, rgba(34,211,238,.22), transparent 55%),
-        radial-gradient(800px 550px at 50% 110%, rgba(124,92,255,.18), transparent 60%),
+        radial-gradient(900px 500px at 15% -10%, rgba(124,92,255,.26), transparent 60%),
+        radial-gradient(800px 500px at 95% 0%, rgba(34,211,238,.20), transparent 55%),
+        radial-gradient(800px 550px at 50% 110%, rgba(124,92,255,.16), transparent 60%),
         var(--bg);
-      line-height:1.6;
+      line-height:1.55;
     }
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:1100px;margin:0 auto;padding:20px}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px}
     .topbar{
       position:sticky;top:0;z-index:50;
       backdrop-filter: blur(10px);
-      background: rgba(11,16,32,.72);
+      background: rgba(11,16,32,.70);
       border-bottom:1px solid var(--line);
     }
     .nav{
-      max-width:1100px;margin:0 auto;padding:12px 20px;
+      max-width:1100px;margin:0 auto;padding:12px 18px;
       display:flex;gap:12px;align-items:center;justify-content:space-between;
     }
     .brand{display:flex;gap:10px;align-items:center;font-weight:900;letter-spacing:.2px}
     .logo{
       width:34px;height:34px;border-radius:12px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 12px 30px rgba(124,92,255,.25);
+      box-shadow: 0 12px 30px rgba(124,92,255,.22);
     }
-    details.menu{display:none}
+
     .links{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
     .link{
       padding:8px 10px;border-radius:999px;
@@ -63,14 +65,18 @@
     }
     .link:hover{background:rgba(255,255,255,.07);color:var(--text);transform:translateY(-1px)}
     .link.active{background:rgba(124,92,255,.14);border-color:rgba(124,92,255,.45);color:var(--text)}
+
     .cta{
       padding:10px 14px;border-radius:999px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       color:#071022;font-weight:950;border:0;
-      box-shadow: 0 14px 34px rgba(124,92,255,.24);
+      box-shadow: 0 14px 34px rgba(124,92,255,.22);
       display:inline-flex;gap:8px;align-items:center;white-space:nowrap;
     }
     .cta:hover{filter:brightness(1.05);transform:translateY(-1px)}
+
+    /* Mobile menu */
+    details.menu{display:none}
     @media (max-width: 860px){
       .links{display:none}
       details.menu{display:block}
@@ -79,9 +85,8 @@
         padding:8px 10px;border-radius:12px;
         border:1px solid var(--line);
         background:rgba(255,255,255,.04);
-        color:var(--text);font-weight:800;
+        color:var(--text);font-weight:850;
       }
-      details.menu[open] summary{background:rgba(255,255,255,.07)}
       details.menu .panel{
         margin-top:10px;
         border:1px solid var(--line);
@@ -90,9 +95,8 @@
         padding:10px;
         display:grid;gap:8px;
       }
-      details.menu .panel a{display:block}
-      details.menu .panel .link{display:block;text-align:center}
-      details.menu .panel .cta{width:100%;justify-content:center}
+      details.menu .panel a{display:block;text-align:center}
+      details.menu .panel .cta{justify-content:center}
     }
 
     .hero{
@@ -101,65 +105,62 @@
       border-radius:var(--r);
       background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
       box-shadow: var(--shadow);
-      padding:24px;
+      padding:22px;
     }
-    .hero-grid{display:grid;grid-template-columns: 1.25fr .75fr;gap:18px;align-items:start}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+      align-items:start;
+    }
     @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr} }
     h1{margin:0 0 10px;font-size:40px;line-height:1.1;letter-spacing:-.6px}
     @media (max-width: 520px){ h1{font-size:32px} }
-    .sub{margin:0 0 18px;color:var(--muted);max-width:60ch}
-    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-    .note{
-      margin-top:14px;
-      padding:12px 14px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(255,255,255,.03);
-      color:var(--muted);
-      font-size:13px;
-    }
+    .sub{margin:0 0 16px;color:var(--muted);max-width:56ch}
 
-    .card{
-      border:1px solid var(--line);
-      border-radius:var(--r);
-      background: var(--panel2);
-      padding:18px;
-    }
-    .card h2{margin:0 0 10px;font-size:18px}
-    .card p{margin:0;color:var(--muted)}
-    .stack{display:grid;gap:12px}
-
-    .section{margin-top:18px}
-    .section h2{margin:0 0 10px;font-size:22px;letter-spacing:-.2px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
-    .mini{
+    .panel{
       border:1px solid var(--line);
       border-radius:var(--r);
       background: var(--panel2);
       padding:16px;
     }
-    .mini h3{margin:0 0 6px;font-size:16px}
-    .mini p{margin:0;color:var(--muted);font-size:14px}
+    .panel h2{margin:0 0 8px;font-size:16px}
+    .panel p{margin:0;color:var(--muted);font-size:14px}
 
-    .nextbar{
-      margin-top:18px;
-      display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;
-      padding:14px 16px;
+    .grid{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+    .mini{
       border:1px solid var(--line);
       border-radius:var(--r);
+      background: var(--panel2);
+      padding:14px;
+    }
+    .mini strong{display:block;margin-bottom:6px}
+    .mini span{color:var(--muted);font-size:14px}
+
+    .legal{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:12.5px;
+      border:1px dashed rgba(255,255,255,.18);
+      padding:12px 14px;
+      border-radius:14px;
       background: rgba(255,255,255,.03);
     }
-    .nextbar .muted{color:var(--muted);font-size:14px}
 
     footer{
-      margin-top:28px;
+      margin-top:24px;
       border-top:1px solid var(--line);
       background: rgba(0,0,0,.18);
     }
     .foot{
-      max-width:1100px;margin:0 auto;padding:18px 20px;
-      display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;
+      max-width:1100px;margin:0 auto;padding:16px 18px;
+      display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;
       color:var(--muted);font-size:14px;
     }
     .foot a{color:var(--text);opacity:.9}
@@ -206,87 +207,13 @@
   <section class="hero">
     <div class="hero-grid">
       <div>
-        <h1>Clean automation for local businesses that want more booked customers.</h1>
-        <p class="sub">
-          This independent site explains an all-in-one platform used to manage leads, follow-ups,
-          appointment reminders, and customer communication — without juggling multiple tools.
-        </p>
-        <div class="row">
-          <a class="cta" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">Start Free Demo →</a>
-          <a class="link" href="review.html">Read the Review</a>
-          <a class="link" href="faq.html">See FAQ</a>
+        <h1>One simple system to capture leads, follow up fast, and book more customers.</h1>
+        <p class="sub">Independent guide. Quick pages. Clear next step.</p>
+
+        <div class="row" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a class="cta" href="review.html">Start with the Review →</a>
+          <a class="link" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">Or try the demo</a>
         </div>
-        <div class="note">
-          <strong>Disclosure:</strong> This website uses affiliate links. If you sign up through a link, I may earn a commission at no extra cost to you.
-          This is an independent informational site, not the official product website.
-        </div>
-      </div>
 
-      <div class="stack">
-        <div class="card">
-          <h2>Start here (fast)</h2>
-          <p>Best path for a quick decision:</p>
-        </div>
-        <div class="card">
-          <h2>1) Review</h2>
-          <p>Pros/cons and who this fits best.</p>
-          <div style="margin-top:12px">
-            <a class="link" href="review.html">Go to Review →</a>
-          </div>
-        </div>
-        <div class="card">
-          <h2>2) Industry Fit</h2>
-          <p>See examples by business type.</p>
-          <div style="margin-top:12px">
-            <a class="link" href="industries.html">Browse Industries →</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>What it helps with</h2>
-    <div class="grid">
-      <div class="mini">
-        <h3>Lead capture + follow-up</h3>
-        <p>Track inquiries and respond faster with simple automation.</p>
-      </div>
-      <div class="mini">
-        <h3>Reminders + confirmations</h3>
-        <p>Reduce no-shows with consistent appointment messaging.</p>
-      </div>
-      <div class="mini">
-        <h3>Organized customer inbox</h3>
-        <p>Keep conversations in one place so nothing gets missed.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="nextbar">
-    <div>
-      <div style="font-weight:900;">Next recommended page</div>
-      <div class="muted">Read the buyer-intent review (best for conversions).</div>
-    </div>
-    <a class="cta" href="review.html">Go to Review →</a>
-  </section>
-</div>
-
-<footer>
-  <div class="foot">
-    <div>
-      <div style="font-weight:900;color:var(--text);margin-bottom:6px;">LocalGrowth Stack</div>
-      <div>Independent informational site. Affiliate links may be used.</div>
-    </div>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
-      <a href="faq.html">FAQ</a>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
-
+        <div class="legal">
+          <strong>Disclosure:</strong> This site contains affiliate links. If you sig
