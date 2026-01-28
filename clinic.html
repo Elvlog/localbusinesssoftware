@@ -3,87 +3,160 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Software for Clinics – Bookings, Reminders, Follow-Ups</title>
-  <meta name="description" content="How clinics and healthcare-adjacent practices can use automation to reduce no-shows and improve follow-up." />
+  <title>Clinics – Reduce No-Shows & Improve Follow-Ups</title>
+  <meta name="description" content="Independent guide for clinics and appointment-based practices: follow-ups, reminders, and organized patient inquiries using an all-in-one system." />
+
   <style>
-    body{font-family:Arial,Helvetica,sans-serif;margin:0;line-height:1.6;color:#111}
-    header{border-bottom:1px solid #e6e6e6;background:#fff;position:sticky;top:0}
-    nav{max-width:1000px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:14px}
-    nav a{padding:8px 10px;border-radius:10px;text-decoration:none;color:#111}
-    nav a:hover{background:#f3f3f3}
-    .cta{margin-left:auto;font-weight:bold}
-    main{max-width:1000px;margin:0 auto;padding:22px}
-    .card{border:1px solid #e6e6e6;border-radius:16px;padding:18px;margin:14px 0}
-    .btn{display:inline-block;padding:10px 14px;border:1px solid #111;border-radius:12px;text-decoration:none;color:#111;font-weight:bold}
-    footer{border-top:1px solid #e6e6e6;margin-top:40px;padding:18px}
-    footer .wrap{max-width:1000px;margin:0 auto;font-size:14px}
-    .muted{opacity:.8}
+    :root{
+      --bg:#0b1020; --text:#eaf0ff; --muted:#b8c3e6; --line:rgba(255,255,255,.12);
+      --accent:#7c5cff; --accent2:#22d3ee; --good:#32d583; --shadow:0 18px 50px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; color:var(--text); line-height:1.55;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+      background: radial-gradient(1000px 600px at 20% -10%, rgba(124,92,255,.35), transparent 60%),
+                  radial-gradient(900px 500px at 90% 0%, rgba(34,211,238,.25), transparent 55%),
+                  radial-gradient(900px 600px at 50% 110%, rgba(50,213,131,.18), transparent 60%),
+                  var(--bg);
+    }
+    a{color:inherit;text-decoration:none}
+    .topbar{position:sticky;top:0;z-index:50;backdrop-filter: blur(10px);background:rgba(11,16,32,.72);border-bottom:1px solid var(--line)}
+    .nav{max-width:1100px;margin:0 auto;padding:14px 22px;display:flex;gap:10px;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:800}
+    .logo{width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 10px 30px rgba(124,92,255,.25)}
+    .navlinks{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .pill{padding:9px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:rgba(255,255,255,.04);transition:.2s;font-weight:600;font-size:14px}
+    .pill:hover{transform:translateY(-1px);background:rgba(255,255,255,.07);color:var(--text)}
+    .pill.active{border-color:rgba(124,92,255,.55);background:rgba(124,92,255,.16);color:var(--text)}
+    .cta{padding:10px 14px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#071022;font-weight:900;box-shadow:0 16px 40px rgba(124,92,255,.25);display:inline-flex;gap:8px;align-items:center}
+    .cta:hover{filter:brightness(1.05);transform:translateY(-1px)}
+    .wrap{max-width:1100px;margin:0 auto;padding:22px}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:stretch;padding-top:10px}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+    .panel{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));box-shadow:var(--shadow);padding:22px;position:relative;overflow:hidden}
+    .panel::after{content:"";position:absolute;inset:-2px;background:radial-gradient(600px 200px at 30% 0%, rgba(124,92,255,.20), transparent 55%),radial-gradient(500px 200px at 90% 10%, rgba(34,211,238,.18), transparent 55%);pointer-events:none}
+    .panel>*{position:relative}
+    h1{margin:0 0 10px;font-size:38px;line-height:1.1;letter-spacing:-.6px}
+    .sub{margin:0 0 14px;color:var(--muted)}
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:8px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--muted);font-weight:700;font-size:13px}
+    .dot{width:9px;height:9px;border-radius:99px;background:var(--good);box-shadow:0 0 0 5px rgba(50,213,131,.12)}
+    .card{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.03);padding:18px;margin-top:14px;transition:.2s}
+    .card:hover{transform:translateY(-2px);background:rgba(255,255,255,.05)}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .title{font-weight:900;margin:0 0 6px}
+    .muted{color:var(--muted);margin:0}
+    .list{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+    .flow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn2{padding:10px 12px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);font-weight:800}
+    .btn2:hover{background:rgba(255,255,255,.07);transform:translateY(-1px)}
+    footer{margin-top:34px;border-top:1px solid var(--line);background:rgba(0,0,0,.15)}
+    .foot{max-width:1100px;margin:0 auto;padding:22px;display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;color:var(--muted);font-size:14px}
+    .foot a{color:var(--text);opacity:.9}
+    .foot a:hover{opacity:1}
+    .note{margin-top:12px;font-size:13px;color:var(--muted);border:1px dashed rgba(255,255,255,.18);padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.03)}
   </style>
 </head>
 <body>
 
-<header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="clinic.html">Clinics</a>
-    <a href="review.html">Review</a>
-    <a href="industries.html">Industries</a>
-    <a href="faq.html">FAQ</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="affiliate-disclosure.html">Disclosure</a>
+<div class="topbar">
+  <div class="nav">
+    <div class="brand"><div class="logo"></div><div>LocalGrowth Stack</div></div>
+    <div class="navlinks">
+      <a class="pill" href="index.html">Home</a>
+      <a class="pill active" href="clinic.html">Clinics</a>
+      <a class="pill" href="review.html">Review</a>
+      <a class="pill" href="industries.html">Industries</a>
+      <a class="pill" href="faq.html">FAQ</a>
+      <a class="pill" href="privacy.html">Privacy</a>
+      <a class="pill" href="affiliate-disclosure.html">Disclosure</a>
+      <a class="cta" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">Try Free Demo →</a>
+    </div>
+  </div>
+</div>
 
-    <a class="cta" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">
-      Try Free Demo →
-    </a>
-  </nav>
-</header>
+<div class="wrap">
+  <div class="hero">
+    <section class="panel">
+      <div class="badge"><span class="dot"></span> Clinic-focused workflow (independent guide)</div>
+      <h1>Reduce no-shows. Respond faster. Keep inquiries organized.</h1>
+      <p class="sub">
+        If your clinic relies on appointments and inbound inquiries, your biggest leaks are usually missed calls,
+        slow follow-up, and inconsistent reminders. A single, organized system can help.
+      </p>
 
-<main>
-  <h1>Clinic Automation: Reduce No-Shows & Improve Follow-Up</h1>
+      <div class="flow">
+        <a class="cta" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">Start Free Demo →</a>
+        <a class="btn2" href="review.html">Read Review →</a>
+        <a class="btn2" href="faq.html">See FAQ →</a>
+      </div>
 
-  <p class="muted">
-    Informational content only. Not medical advice. Affiliate links may be used.
-  </p>
+      <div class="note">
+        <strong>Disclosure:</strong> This page may use affiliate links. I may earn a commission if you sign up (at no extra cost to you).
+        This is not an official brand website.
+      </div>
+    </section>
 
-  <div class="card">
-    <h2>Common clinic problems</h2>
-    <ul>
-      <li>Missed calls</li>
-      <li>No-shows and late cancellations</li>
-      <li>Slow follow-up with new patient inquiries</li>
-      <li>Messages scattered across phone/email/social</li>
-    </ul>
+    <aside class="card">
+      <p class="title">Clinic wins to target</p>
+      <p class="muted">Simple improvements that often increase bookings:</p>
+      <ul class="list">
+        <li>Missed-call text back</li>
+        <li>Appointment reminders + confirmations</li>
+        <li>One inbox for messages</li>
+        <li>Clear lead status tracking</li>
+      </ul>
+      <div class="card" style="margin-top:14px;">
+        <p class="title">Best next step</p>
+        <p class="muted">Read the buyer-intent page:</p>
+        <div class="flow" style="margin-top:10px;">
+          <a class="btn2" href="review.html">Go to Review →</a>
+        </div>
+      </div>
+    </aside>
   </div>
 
-  <div class="card">
-    <h2>What an all-in-one platform can help with</h2>
-    <ul>
-      <li>Automated reminders (text/email)</li>
-      <li>Central inbox for messages</li>
-      <li>Lead tracking + follow-up workflows</li>
-      <li>Basic reporting so you see what’s working</li>
-    </ul>
+  <section class="card">
+    <p class="title">A clean clinic-friendly setup (example flow)</p>
+    <div class="grid" style="margin-top:10px;">
+      <div class="card">
+        <p class="title">1) Capture</p>
+        <p class="muted">Calls, forms, and messages land in one place.</p>
+      </div>
+      <div class="card">
+        <p class="title">2) Follow-up</p>
+        <p class="muted">Automations help respond quickly and consistently.</p>
+      </div>
+      <div class="card">
+        <p class="title">3) Book</p>
+        <p class="muted">Appointment reminders reduce no-shows.</p>
+      </div>
+      <div class="card">
+        <p class="title">4) Retain</p>
+        <p class="muted">Re-activation messages bring patients back.</p>
+      </div>
+    </div>
 
-    <p>
-      <a class="btn" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">
-        Try the Free Demo
-      </a>
-    </p>
-  </div>
-
-  <p>
-    Next: read the <a href="review.html">full review</a> or browse more <a href="industries.html">industries</a>.
-  </p>
-</main>
+    <div class="flow" style="margin-top:14px;">
+      <a class="btn2" href="index.html">← Home</a>
+      <a class="btn2" href="review.html">Next: Review →</a>
+    </div>
+  </section>
+</div>
 
 <footer>
-  <div class="wrap">
-    <p><strong>Affiliate disclosure:</strong> This website contains affiliate links. If you sign up, I may earn a commission at no extra cost to you.</p>
-    <p>
-      <a href="privacy.html">Privacy Policy</a> ·
+  <div class="foot">
+    <div>
+      <div style="font-weight:900;color:var(--text);margin-bottom:6px;">LocalGrowth Stack</div>
+      <div>Independent informational site. Affiliate links may be used.</div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="privacy.html">Privacy Policy</a>
       <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
-    </p>
-    <p class="muted">Independent informational site. Not endorsed by or affiliated with any brand unless stated.</p>
+      <a href="faq.html">FAQ</a>
+    </div>
   </div>
 </footer>
 
