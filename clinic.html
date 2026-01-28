@@ -3,24 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <meta name="google-site-verification" content="0DtwDEAhTy7qYl-5pZ9C4NPx45b7aBWCQJSZZ6938J4" />
 
-  <title>LocalGrowth Stack – Simple Automation for Local Businesses</title>
-  <meta name="description" content="Independent guide to an all-in-one platform for leads, follow-ups, and appointment reminders." />
+  <title>Clinics – Bookings, Reminders & Follow-Up Automation</title>
+  <meta name="description" content="How clinics and appointment-based practices can reduce no-shows and improve follow-ups with simple automation." />
 
   <style>
     :root{
-      --bg:#0b1020;
-      --panel:rgba(255,255,255,.06);
-      --panel2:rgba(255,255,255,.04);
-      --line:rgba(255,255,255,.12);
-      --text:#eaf0ff;
-      --muted:#b8c3e6;
-      --accent:#7c5cff;
-      --accent2:#22d3ee;
-      --shadow: 0 14px 38px rgba(0,0,0,.40);
-      --r:18px;
+      --bg:#0b1020; --panel:rgba(255,255,255,.06); --panel2:rgba(255,255,255,.04);
+      --line:rgba(255,255,255,.12); --text:#eaf0ff; --muted:#b8c3e6;
+      --accent:#7c5cff; --accent2:#22d3ee; --shadow: 0 14px 38px rgba(0,0,0,.40); --r:18px;
     }
     *{box-sizing:border-box}
     body{
@@ -52,20 +44,14 @@
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       box-shadow: 0 12px 30px rgba(124,92,255,.22);
     }
-
     .links{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
     .link{
-      padding:8px 10px;border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color:var(--muted);
-      font-weight:650;font-size:14px;
-      transition:.15s ease;
-      white-space:nowrap;
+      padding:8px 10px;border-radius:999px;border:1px solid var(--line);
+      background: rgba(255,255,255,.04); color:var(--muted);
+      font-weight:650;font-size:14px; transition:.15s ease; white-space:nowrap;
     }
     .link:hover{background:rgba(255,255,255,.07);color:var(--text);transform:translateY(-1px)}
     .link.active{background:rgba(124,92,255,.14);border-color:rgba(124,92,255,.45);color:var(--text)}
-
     .cta{
       padding:10px 14px;border-radius:999px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
@@ -74,195 +60,14 @@
       display:inline-flex;gap:8px;align-items:center;white-space:nowrap;
     }
     .cta:hover{filter:brightness(1.05);transform:translateY(-1px)}
-
-    /* Mobile menu */
     details.menu{display:none}
     @media (max-width: 860px){
       .links{display:none}
       details.menu{display:block}
       details.menu summary{
         list-style:none;cursor:pointer;
-        padding:8px 10px;border-radius:12px;
-        border:1px solid var(--line);
-        background:rgba(255,255,255,.04);
-        color:var(--text);font-weight:850;
+        padding:8px 10px;border-radius:12px;border:1px solid var(--line);
+        background:rgba(255,255,255,.04);color:var(--text);font-weight:850;
       }
       details.menu .panel{
-        margin-top:10px;
-        border:1px solid var(--line);
-        background:rgba(11,16,32,.92);
-        border-radius:14px;
-        padding:10px;
-        display:grid;gap:8px;
-      }
-      details.menu .panel a{display:block;text-align:center}
-      details.menu .panel .cta{justify-content:center}
-    }
-
-    .hero{
-      margin-top:16px;
-      border:1px solid var(--line);
-      border-radius:var(--r);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
-      padding:22px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:14px;
-      align-items:start;
-    }
-    @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr} }
-    h1{margin:0 0 10px;font-size:40px;line-height:1.1;letter-spacing:-.6px}
-    @media (max-width: 520px){ h1{font-size:32px} }
-    .sub{margin:0 0 16px;color:var(--muted);max-width:56ch}
-
-    .panel{
-      border:1px solid var(--line);
-      border-radius:var(--r);
-      background: var(--panel2);
-      padding:16px;
-    }
-    .panel h2{margin:0 0 8px;font-size:16px}
-    .panel p{margin:0;color:var(--muted);font-size:14px}
-
-    .grid{
-      margin-top:14px;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-    }
-    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
-    .mini{
-      border:1px solid var(--line);
-      border-radius:var(--r);
-      background: var(--panel2);
-      padding:14px;
-    }
-    .mini strong{display:block;margin-bottom:6px}
-    .mini span{color:var(--muted);font-size:14px}
-
-    .legal{
-      margin-top:14px;
-      color:var(--muted);
-      font-size:12.5px;
-      border:1px dashed rgba(255,255,255,.18);
-      padding:12px 14px;
-      border-radius:14px;
-      background: rgba(255,255,255,.03);
-    }
-
-    footer{
-      margin-top:24px;
-      border-top:1px solid var(--line);
-      background: rgba(0,0,0,.18);
-    }
-    .foot{
-      max-width:1100px;margin:0 auto;padding:16px 18px;
-      display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;
-      color:var(--muted);font-size:14px;
-    }
-    .foot a{color:var(--text);opacity:.9}
-    .foot a:hover{opacity:1}
-  </style>
-</head>
-<body>
-
-<div class="topbar">
-  <div class="nav">
-    <div class="brand">
-      <div class="logo"></div>
-      <div>LocalGrowth Stack</div>
-    </div>
-
-    <div class="links">
-      <a class="link active" href="index.html">Home</a>
-      <a class="link" href="clinic.html">Clinics</a>
-      <a class="link" href="review.html">Review</a>
-      <a class="link" href="industries.html">Industries</a>
-      <a class="link" href="faq.html">FAQ</a>
-      <a class="link" href="privacy.html">Privacy</a>
-      <a class="link" href="affiliate-disclosure.html">Disclosure</a>
-      <a class="cta" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">Try Free Demo →</a>
-    </div>
-
-    <details class="menu">
-      <summary>Menu</summary>
-      <div class="panel">
-        <a class="link active" href="index.html">Home</a>
-        <a class="link" href="clinic.html">Clinics</a>
-        <a class="link" href="review.html">Review</a>
-        <a class="link" href="industries.html">Industries</a>
-        <a class="link" href="faq.html">FAQ</a>
-        <a class="link" href="privacy.html">Privacy</a>
-        <a class="link" href="affiliate-disclosure.html">Disclosure</a>
-        <a class="cta" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">Try Free Demo →</a>
-      </div>
-    </details>
-  </div>
-</div>
-
-<div class="wrap">
-  <section class="hero">
-    <div class="hero-grid">
-      <div>
-        <h1>One simple system to capture leads, follow up fast, and book more customers.</h1>
-        <p class="sub">Independent guide. Quick pages. Clear next step.</p>
-
-        <div class="row" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-          <a class="cta" href="review.html">Start with the Review →</a>
-          <a class="link" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">Or try the demo</a>
-        </div>
-
-        <div class="legal">
-          <strong>Disclosure:</strong> This site contains affiliate links. If you sign up through a link, I may earn a commission at no extra cost to you.
-          This is an independent informational site (not the official product website).
-        </div>
-      </div>
-
-      <div class="panel">
-        <h2>Quick navigation</h2>
-        <p>Pick what matches you:</p>
-        <div style="display:grid;gap:10px;margin-top:12px;">
-          <a class="link" href="review.html">Best page to decide (Review) →</a>
-          <a class="link" href="clinic.html">Clinics / patient bookings →</a>
-          <a class="link" href="industries.html">All industries overview →</a>
-          <a class="link" href="faq.html">Common questions (FAQ) →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid">
-      <div class="mini">
-        <strong>Lead follow-up</strong>
-        <span>Stop losing inquiries to slow responses.</span>
-      </div>
-      <div class="mini">
-        <strong>No-show reduction</strong>
-        <span>Use reminders and confirmations.</span>
-      </div>
-      <div class="mini">
-        <strong>One inbox</strong>
-        <span>Keep messages organized in one place.</span>
-      </div>
-    </div>
-  </section>
-</div>
-
-<footer>
-  <div class="foot">
-    <div>
-      <div style="font-weight:900;color:var(--text);margin-bottom:6px;">LocalGrowth Stack</div>
-      <div>Independent informational site. Affiliate links may be used.</div>
-    </div>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
-      <a href="faq.html">FAQ</a>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
+        margin-top:1
