@@ -1,402 +1,321 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
-
 <head>
-   <meta name="google-site-verification" content="0DtwDEAhTy7qYl-5pZ9C4NPx45b7aBWCQJSZZ6938J4" />
-
-  <meta charset="UTF-8">
-
-  <title>Best Software for Local Businesses | Free Demo</title>
-
-  <meta name="description" content="Discover the #1 all-in-one software local businesses use to automate bookings, follow-ups, payments, and leads. Free demo available.">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-  <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
-
-  <meta name="google-site-verification" content="PASTE_GOOGLE_CODE_HERE">
-
-
+  <meta name="google-site-verification" content="0DtwDEAhTy7qYl-5pZ9C4NPx45b7aBWCQJSZZ6938J4" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Local Business Software – Automate Leads, Bookings & Follow-Ups</title>
+  <meta name="description" content="Independent guide to an all-in-one platform that helps local businesses manage leads, bookings, and follow-ups." />
 
   <style>
-
-    body {
-
-      margin: 0;
-
-      font-family: 'Segoe UI', Arial, sans-serif;
-
-      background: #f4f6fb;
-
-      color: #111;
-
+    :root{
+      --bg:#0b1020;
+      --card:#0f1731;
+      --card2:#111c3a;
+      --text:#eaf0ff;
+      --muted:#b8c3e6;
+      --line:rgba(255,255,255,.12);
+      --accent:#7c5cff;
+      --accent2:#22d3ee;
+      --good:#32d583;
+      --warn:#fbbf24;
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:14px;
     }
-
-
-
-    .hero {
-
-      background: linear-gradient(135deg, #2563eb, #1e40af);
-
-      color: white;
-
-      padding: 70px 20px;
-
-      text-align: center;
-
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+      background: radial-gradient(1000px 600px at 20% -10%, rgba(124,92,255,.35), transparent 60%),
+                  radial-gradient(900px 500px at 90% 0%, rgba(34,211,238,.25), transparent 55%),
+                  radial-gradient(900px 600px at 50% 110%, rgba(50,213,131,.18), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
     }
-
-
-
-    .hero h1 {
-
-      font-size: 40px;
-
-      margin-bottom: 15px;
-
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:22px}
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,16,32,.72);
+      border-bottom:1px solid var(--line);
     }
-
-
-
-    .hero p {
-
-      font-size: 18px;
-
-      max-width: 700px;
-
-      margin: auto;
-
+    .nav{
+      display:flex;gap:10px;align-items:center;justify-content:space-between;
+      max-width:1100px;margin:0 auto;padding:14px 22px;
     }
-
-
-
-    .cta {
-
-      display: inline-block;
-
-      background: #22c55e;
-
-      color: #fff;
-
-      padding: 16px 30px;
-
-      font-size: 18px;
-
-      font-weight: bold;
-
-      text-decoration: none;
-
-      border-radius: 8px;
-
-      margin-top: 30px;
-
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-
+    .brand{
+      display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.2px
     }
-
-
-
-    .cta:hover {
-
-      transform: translateY(-2px);
-
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-
+    .logo{
+      width:34px;height:34px;border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 30px rgba(124,92,255,.25);
     }
-
-
-
-    .container {
-
-      max-width: 1000px;
-
-      margin: auto;
-
-      padding: 50px 20px;
-
+    .navlinks{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .pill{
+      padding:9px 12px;border:1px solid var(--line);
+      border-radius:999px;color:var(--muted);
+      background: rgba(255,255,255,.04);
+      transition:.2s ease;
+      font-weight:600;font-size:14px;
     }
-
-
-
-    .section-title {
-
-      text-align: center;
-
-      font-size: 30px;
-
-      margin-bottom: 35px;
-
+    .pill:hover{transform:translateY(-1px);background:rgba(255,255,255,.07);color:var(--text)}
+    .pill.active{border-color: rgba(124,92,255,.55); color:var(--text); background: rgba(124,92,255,.16)}
+    .cta{
+      padding:10px 14px;border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#071022;font-weight:900;border:0;
+      box-shadow: 0 16px 40px rgba(124,92,255,.25);
+      display:inline-flex;gap:8px;align-items:center;
     }
-
-
-
-    .grid {
-
-      display: grid;
-
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-      gap: 25px;
-
+    .cta:hover{filter:brightness(1.05);transform:translateY(-1px)}
+    .hero{
+      padding:28px 0 8px;
+      display:grid;grid-template-columns: 1.15fr .85fr;gap:18px;align-items:stretch;
     }
-
-
-
-    .card {
-
-      background: #fff;
-
-      padding: 25px;
-
-      border-radius: 12px;
-
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-
-      transition: transform 0.2s ease;
-
+    @media (max-width: 900px){ .hero{grid-template-columns:1fr} }
+    .hcard{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      padding:22px;
+      position:relative;
+      overflow:hidden;
     }
-
-
-
-    .card:hover {
-
-      transform: translateY(-4px);
-
+    .hcard::after{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 200px at 30% 0%, rgba(124,92,255,.20), transparent 55%),
+                  radial-gradient(500px 200px at 90% 10%, rgba(34,211,238,.18), transparent 55%);
+      pointer-events:none;
     }
-
-
-
-    .card h3 {
-
-      margin-top: 0;
-
+    .hcard > *{position:relative}
+    h1{margin:0 0 10px;font-size:40px;line-height:1.08;letter-spacing:-.6px}
+    @media (max-width: 520px){ h1{font-size:32px} }
+    .sub{color:var(--muted);font-size:16px;margin:0 0 16px}
+    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color:var(--muted);
+      font-weight:700;font-size:13px;
     }
-
-
-
-    .center {
-
-      text-align: center;
-
+    .dot{width:9px;height:9px;border-radius:99px;background:var(--good);box-shadow:0 0 0 5px rgba(50,213,131,.12)}
+    .mini{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+      padding:18px;
     }
-
-
-
-    .secondary-link {
-
-      display: inline-block;
-
-      margin-top: 20px;
-
-      font-weight: bold;
-
-      color: #2563eb;
-
-      text-decoration: none;
-
+    .mini h2{margin:0 0 8px;font-size:18px}
+    .mini p{margin:0;color:var(--muted)}
+    .grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px;
     }
-
-
-
-    .secondary-link:hover {
-
-      text-decoration: underline;
-
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.03);
+      padding:18px;
+      transition:.2s ease;
     }
-
-
-
-    .faq p {
-
-      margin-bottom: 18px;
-
+    .card:hover{transform:translateY(-2px);background:rgba(255,255,255,.05)}
+    .card h3{margin:0 0 8px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .kpi{
+      display:flex;gap:10px;flex-wrap:wrap;margin-top:12px
     }
-
-
-
-    footer {
-
-      background: #111827;
-
-      color: #d1d5db;
-
-      text-align: center;
-
-      padding: 30px 15px;
-
-      font-size: 14px;
-
+    .kpi .chip{
+      border:1px solid var(--line);
+      border-radius: 14px;
+      padding:10px 12px;
+      background: rgba(255,255,255,.04);
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
     }
-
+    .section{margin-top:18px}
+    .section h2{margin:0 0 10px;font-size:22px;letter-spacing:-.2px}
+    .section p{margin:0;color:var(--muted)}
+    .steps{
+      margin-top:12px;
+      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+    }
+    @media (max-width: 900px){ .steps{grid-template-columns:1fr} }
+    .stepnum{
+      width:30px;height:30px;border-radius:12px;
+      display:inline-flex;align-items:center;justify-content:center;
+      background: rgba(124,92,255,.18); border:1px solid rgba(124,92,255,.40);
+      color:var(--text); font-weight:900;
+      margin-bottom:10px;
+    }
+    .legalnote{
+      margin-top:14px;
+      font-size:13px;color:var(--muted);
+      border:1px dashed rgba(255,255,255,.18);
+      padding:12px 14px;border-radius:14px;
+      background: rgba(255,255,255,.03);
+    }
+    footer{
+      margin-top:34px;
+      border-top:1px solid var(--line);
+      background: rgba(0,0,0,.15);
+    }
+    .foot{
+      max-width:1100px;margin:0 auto;padding:22px;
+      display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;
+      color:var(--muted);font-size:14px;
+    }
+    .foot a{color:var(--text);opacity:.9}
+    .foot a:hover{opacity:1}
   </style>
-
 </head>
-
-
-
 <body>
 
+<div class="topbar">
+  <div class="nav">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>LocalGrowth Stack</div>
+    </div>
 
+    <div class="navlinks">
+      <a class="pill active" href="index.html">Home</a>
+      <a class="pill" href="clinic.html">Clinics</a>
+      <a class="pill" href="review.html">Review</a>
+      <a class="pill" href="industries.html">Industries</a>
+      <a class="pill" href="faq.html">FAQ</a>
+      <a class="pill" href="privacy.html">Privacy</a>
+      <a class="pill" href="affiliate-disclosure.html">Disclosure</a>
+      <a class="cta" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">
+        Try Free Demo →
+      </a>
+    </div>
+  </div>
+</div>
 
-  <!-- HERO -->
-
+<div class="wrap">
   <div class="hero">
+    <section class="hcard">
+      <div class="row">
+        <span class="badge"><span class="dot"></span> Independent guide • Affiliate links used</span>
+        <span class="badge">Built for local businesses</span>
+        <span class="badge">Simple + scalable</span>
+      </div>
 
-    <h1>🚀 The #1 Software Local Businesses Are Switching To</h1>
+      <h1>Turn missed leads into booked customers — with one clean system.</h1>
+      <p class="sub">
+        This site explains an all-in-one platform used by many service businesses to manage leads,
+        follow-ups, and customer communication — without juggling multiple tools.
+      </p>
 
-    <p>
+      <div class="row">
+        <a class="cta" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">Start Free Demo →</a>
+        <a class="pill" href="review.html">Read the review</a>
+        <a class="pill" href="industries.html">Browse industries</a>
+      </div>
 
-      Automate bookings, follow-ups, payments, and leads — all in one platform.
+      <div class="kpi">
+        <div class="chip">✅ Faster follow-up</div>
+        <div class="chip">✅ Fewer no-shows</div>
+        <div class="chip">✅ Organized pipeline</div>
+        <div class="chip">✅ Central inbox</div>
+      </div>
 
-      Used by clinics, service businesses, and local professionals.
+      <div class="legalnote">
+        <strong>Disclosure:</strong> I may earn a commission if you sign up through links on this site (at no extra cost to you).
+        This is an independent informational website — not the official product website.
+      </div>
+    </section>
 
-    </p>
-
-
-
-    <a class="cta" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank">
-
-      🎯 Try the Free Demo
-
-    </a>
-
+    <aside class="mini">
+      <h2>Start here (quick path)</h2>
+      <p>Want the fastest route to a decision?</p>
+      <div style="margin-top:12px;display:grid;gap:10px;">
+        <div class="card">
+          <h3>1) Review (buyer intent)</h3>
+          <p>Pros, cons, and who this fits best.</p>
+          <div style="margin-top:10px;"><a class="pill" href="review.html">Go to Review →</a></div>
+        </div>
+        <div class="card">
+          <h3>2) Industry fit</h3>
+          <p>See where automation matters most.</p>
+          <div style="margin-top:10px;"><a class="pill" href="industries.html">Go to Industries →</a></div>
+        </div>
+        <div class="card">
+          <h3>3) FAQ</h3>
+          <p>Answers before you try a demo.</p>
+          <div style="margin-top:10px;"><a class="pill" href="faq.html">Go to FAQ →</a></div>
+        </div>
+      </div>
+    </aside>
   </div>
 
-
-
-  <!-- WHY -->
-
-  <div class="container">
-
-    <h2 class="section-title">Why This Software Works So Well</h2>
-
-
+  <section class="section">
+    <h2>What this software helps with</h2>
+    <p>Common wins for appointment and lead-driven businesses:</p>
 
     <div class="grid">
-
       <div class="card">
-
-        <h3>📅 More Appointments</h3>
-
-        <p>Online booking with automatic reminders reduces no-shows and fills your calendar.</p>
-
+        <h3>Lead capture + follow-ups</h3>
+        <p>Keep inquiries organized and respond faster with automated workflows.</p>
       </div>
-
-
-
       <div class="card">
-
-        <h3>📩 Automated Follow-Ups</h3>
-
-        <p>SMS & email automation keeps leads warm without manual work.</p>
-
+        <h3>Missed-call text back</h3>
+        <p>If you miss a call, automatic follow-up can recover potential customers.</p>
       </div>
-
-
-
       <div class="card">
-
-        <h3>💳 Payments Made Easy</h3>
-
-        <p>Invoices, payments, and tracking — all in one dashboard.</p>
-
+        <h3>Reminders + confirmations</h3>
+        <p>Reduce no-shows with clean, consistent reminders.</p>
       </div>
-
-
-
-      <div class="card">
-
-        <h3>📊 One Simple Dashboard</h3>
-
-        <p>No tech skills required. Everything your business needs in one place.</p>
-
-      </div>
-
     </div>
+  </section>
 
-
-
-    <div class="center">
-
-      <a class="cta" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank">
-
-        🚀 Access the Free Demo
-
-      </a>
-
-
-
-      <br>
-
-
-
-      <a class="secondary-link" href="clinic.html">
-
-        🔍 See the best version for clinics & medical offices →
-
-      </a>
-
+  <section class="section">
+    <h2>3 steps to get value (no tech overwhelm)</h2>
+    <div class="steps">
+      <div class="card">
+        <div class="stepnum">1</div>
+        <h3>Pick your use case</h3>
+        <p>Start with <a class="pill" href="clinic.html">Clinics</a> or <a class="pill" href="industries.html">Industries</a>.</p>
+      </div>
+      <div class="card">
+        <div class="stepnum">2</div>
+        <h3>Read the review</h3>
+        <p>Quick pros/cons and decision guidance on the <a class="pill" href="review.html">Review</a> page.</p>
+      </div>
+      <div class="card">
+        <div class="stepnum">3</div>
+        <h3>Try the demo</h3>
+        <p>Explore features and see if it fits your workflow.</p>
+        <div style="margin-top:10px;">
+          <a class="cta" href="https://www.gohighlevel.com/?fp_ref=elvlog" target="_blank" rel="sponsored nofollow noopener">Try Free Demo →</a>
+        </div>
+      </div>
     </div>
+  </section>
+</div>
 
+<footer>
+  <div class="foot">
+    <div>
+      <div style="font-weight:900;color:var(--text);margin-bottom:6px;">LocalGrowth Stack</div>
+      <div>Independent informational site. Affiliate links may be used.</div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+      <a href="faq.html">FAQ</a>
+    </div>
   </div>
-
-
-
-  <!-- FAQ -->
-
-  <div class="container faq">
-
-    <h2 class="section-title">Frequently Asked Questions</h2>
-
-
-
-    <div class="card">
-
-      <p><strong>Is the demo really free?</strong><br>
-
-      Yes. You can explore the platform before committing.</p>
-
-
-
-      <p><strong>What businesses use this?</strong><br>
-
-      Clinics, optometry offices, dentists, salons, gyms, contractors, and service businesses.</p>
-
-
-
-      <p><strong>Is this hard to set up?</strong><br>
-
-      No. It’s built for business owners, not developers.</p>
-
-
-
-      <p><strong>Does this cost me more?</strong><br>
-
-      No. Using this link does not increase your price.</p>
-
-    </div>
-
-  </div>
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <p>
-
-      This site provides independent software recommendations.<br>
-
-      We may earn a referral commission at no cost to you.
-
-    </p>
-
-  </footer>
-
-
+</footer>
 
 </body>
-
 </html>
